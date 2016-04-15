@@ -38,7 +38,7 @@ client.on('message', function(topic, msg, pkt) {
 	pool.getConnection(function(err, conn) {
 		var message = {
 			'topic': 	topic,
-			'value': 	value,
+			'value': 	msg,
 			'created':	new Date().toISOString().slice(0, 19).replace('T', ' ')
 		}
 		conn.query('INSERT INTO mqtt SET ?', message, function(err, res) {
