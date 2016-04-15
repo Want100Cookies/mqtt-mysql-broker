@@ -1,0 +1,17 @@
+{
+	"name": "mqtt-mysql-broker",
+	"version": "0.1",
+	"private": false,
+	"scripts": {
+		"start": "node index.js"
+	},
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Want100Cookies/mqtt-mysql-broker.git"
+	},
+	"dependencies": {
+		"mqtt": "~1.8.0",
+		"mysql": "~2.10.2"
+	}
+}
