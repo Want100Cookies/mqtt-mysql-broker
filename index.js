@@ -39,7 +39,7 @@ client.on('message', function(topic, msg, pkt) {
 		var message = {
 			'topic': 	topic,
 			'value': 	value,
-			'created'	new Date().toISOString().slice(0, 19).replace('T', ' ');
+			'created':	new Date().toISOString().slice(0, 19).replace('T', ' ');
 		}
 		conn.query('INSERT INTO mqtt SET ?', message, function(err, res) {
 			conn.release();
