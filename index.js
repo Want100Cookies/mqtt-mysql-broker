@@ -1,14 +1,14 @@
 var mqtt = require('mqtt');
 var mysql = require('mysql');
 
-var mqtt_url = 'mqtt://pascal:pascal@127.0.0.1';
+var mqtt_url = 'mqtts://test:test@127.0.0.1';
 
 var mysql_login_details = {
 	connectionLimit: 	10,
 	host: 				'localhost',
-	user: 				'admin_iot',
-	password: 			'Sax243Gs',
-	database: 			'admin_iot'
+	user: 				'',
+	password: 			'',
+	database: 			''
 };
 
 /*
@@ -28,7 +28,7 @@ SQL FOR CREATING MYSQL TABLE
 
 var pool = mysql.createPool(mysql_login_details);
 
-var client = mqtt.connect(mqtt_url);
+var client = mqtt.connect(mqtt_url,{rejectUnauthorized: false});
 
 client.on('connect', function() {
 	client.subscribe('#');
